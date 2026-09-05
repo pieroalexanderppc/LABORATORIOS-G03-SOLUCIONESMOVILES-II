@@ -509,3 +509,4 @@ Respuesta: El ADR-002 incluye formalmente un Plan de Salida. Al asegurar que la 
   ![Anexo E: Workflow de CI](Evidencias/ci_github_actions.png)
 - Anexo F — Protección de Rama Main:  
   ![Anexo F: Branch Protection en GitHub](Evidencias/branch_protection.png)
+  ![Anexo F: Branch Protection en GitHub](Evidencias/branch_protection_2.png)

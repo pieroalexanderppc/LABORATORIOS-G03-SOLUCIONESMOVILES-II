@@ -1,0 +1,37 @@
+name: CI Ampliada - SI988 Taller 02
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  calidad-y-pruebas:
+    name: Verificación de Definition of Done
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Checkout del Código
+        uses: actions/checkout@v4
+
+      - name: 2. Configurar entorno Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.x'
+          channel: 'stable'
+
+      - name: 3. Instalar Dependencias
+        run: |
+          cd SEMANA-02/lab_02
+          flutter pub get
+
+      - name: 4. Análisis Estático (Linter)
+        run: |
+          cd SEMANA-02/lab_02
+          flutter analyze
+
+      - name: 5. Pruebas Unitarias
+        run: |
+          cd SEMANA-02/lab_02
+          flutter test
